@@ -33,7 +33,7 @@ public class ViewServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		out.println("<body bgcolor='Yellow'>");
+		out.println("<body bgcolor='#D4E6F1'>");
 		out.println("<a href='Employee.html'> ADD NEW EMPLOYEE </a>");
 		out.println("<H1>Employee Information </H1>");
 

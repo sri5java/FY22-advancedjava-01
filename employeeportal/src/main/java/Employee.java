@@ -1,15 +1,15 @@
 
 public class Employee {
 
-	int id;
-	int phone;
-	int age;
+	private int id;
+	private int phone;
+	private int age;
 
-	String fname;
-	String lname;
-	String emial;
-	String password;
-	String country;
+	private String fname;
+	private String lname;
+	private String emial;
+	private String password;
+	private String country;
 
 	public int getId() {
 		return id;

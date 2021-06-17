@@ -111,4 +111,52 @@ public class EmployeeDAO {
 
 	}
 
+	public static int updateEmployeeDetails(Employee e) throws SQLException {
+		int status = 0;
+		Connection con = null;
+		try {
+//			int id = e.getId();
+			con = getConnection();
+			String sql = "Update employeeInfo set id=?,firstname=?,lastname=?,username=?,password=?,phone=?,age=?,country=? where id =?";
+			PreparedStatement ps = con.prepareStatement(sql);
+
+			ps.setInt(1, e.getId());
+			ps.setString(2, e.getFname());
+			ps.setString(3, e.getLname());
+			ps.setString(4, e.getEmial());
+			ps.setString(5, e.getPassword());
+			ps.setInt(6, e.getPhone());
+			ps.setInt(7, e.getAge());
+			ps.setString(8, e.getCountry());
+			ps.setInt(9, e.getId());
+
+			status = ps.executeUpdate();
+
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		} finally {
+			con.close();
+		}
+
+		return status;
+	}
+
+	public static int deleteEmployee(int id) {
+		int status = 0;
+		Connection con = null;
+		try {
+			con = getConnection();
+			String sql = "Delete from employeeInfo where id =?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+
+			status = ps.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return status;
+	}
+
 }

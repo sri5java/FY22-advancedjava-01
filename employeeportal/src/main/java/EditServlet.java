@@ -40,32 +40,43 @@ public class EditServlet extends HttpServlet {
 
 		Employee emp = EmployeeDAO.getEmployeeDetailsById(id);
 
-		out.println("<body bgcolor='Gray'>");
-		out.println("<form action='EditServlet2' method='get'");
-		out.println("<table>");
-		out.println("<tr>" + "<td></td>" + "<td> <input type='text' name='id' value='" + emp.getId() + "'/></td></tr>");
-		out.println(
-				"<tr>" + "<td>First Name : </td>" + "<td> <input type='text' name='fname' value='" + emp.getFname() + "'/></td></tr>");
-		out.println(
-				"<tr>" + "<td>Last Name</td>" + "<td> <input type='text' name='lname' value='" + emp.getLname() + "'/></td></tr>");
-		out.println(
-				"<tr>" + "<td>EMail </td>" + "<td> <input type='text' name='email' value='" + emp.getEmial() + "'/></td></tr>");
-		out.println("<tr>" + "<td>Password </td>" + "<td> <input type='text' name='Password' value='" + emp.getPassword()
+		out.println("<body bgcolor='cyan'>");
+		out.print("<form action='EditServlet2' method='get'>");
+		out.print("<table>");
+		out.print("<tr>" 
+				+ "<td>ID : </td>" 
+				+ "<td> <input type='text' name='id' value='" + emp.getId() + "'></td>"
+				+ "</tr>");
+		out.print("<tr>" 
+				+ "<td>First Name : </td>" 
+				+ "<td> <input type='text' name='fname' value='" + emp.getFname()+ "'></td>"
+				+ "</tr>");
+		out.print("<tr>" 
+				+ "<td>Last Name</td>" 
+				+ "<td> <input type='text' name='lname' value='" + emp.getLname()+ "'/></td>"
+				+ "</tr>");
+		out.print("<tr>" 
+				+ "<td>EMail </td>" 
+				+ "<td> <input type='text' name='email' value='" + emp.getEmial()+ "'/>" + "</td>"
+				+ "</tr>");
+		out.print("<tr>" 
+				+ "<td>Password </td>" 
+				+ "<td> <input type='text' name='password' value='" + emp.getPassword()+ "'/></td>"
+				+ "</tr>");
+		out.print("<tr>" + "<td>Phone Number</td>" + "<td> <input type='text' name='phone' value='" + emp.getPhone()
 				+ "'/></td></tr>");
-		out.println(
-				"<tr>" + "<td>Phone Number</td>" + "<td> <input type='text' name='Phone' value='" + emp.getPhone() + "'/></td></tr>");
-		out.println(
-				"<tr>" + "<td>Age </td>" + "<td> <input type='text' name='Age' value='" + emp.getAge() + "'/></td></tr>");
+		out.print("<tr>" + "<td>Age </td>" + "<td> <input type='text' name='age' value='" + emp.getAge()
+				+ "'/></td></tr>");
 
-		out.println("<tr><td>Country : </td><td>");
-		out.println("<select name='Country'>");
-		out.println("<option> India </option>");
-		out.println("<option> USA </option>");
-		out.println("<option> UK </option>");
-		out.println("<option> Others </option>");
-		out.println("</select>");
-		out.println("</td></tr>");
-		out.println("<tr><td colspan='2'><input type='submit' value='edit & save'/><td></tr>");
+		out.print("<tr><td>Country : </td><td>");
+		out.print("<select name='country'>");
+		out.print("<option> India </option>");
+		out.print("<option> USA </option>");
+		out.print("<option> UK </option>");
+		out.print("<option> Others </option>");
+		out.print("</select>");
+		out.print("</td></tr>");
+		out.print("<tr><td colspan='2'><input type='submit' value='edit & save'/><td></tr>");
 		out.print("</table>");
 		out.print("</form>");
 		out.close();
